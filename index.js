@@ -20,6 +20,10 @@ io.on("connection", (socket) => {
   socket.on("MESSAGE_CREATE", (payload) => {
     io.sockets.emit("MESSAGE_CREATE", payload);
   });
+
+  socket.on("NOTIFICATION_CREATE", (payload) => {
+    io.sockets.emit("NOTIFICATION_CREATE", payload);
+  });
 });
 
 server.listen(5000, () => {
